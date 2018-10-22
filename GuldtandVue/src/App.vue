@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <header>
-    </header>
     <main>
-      <router-link v-if="authenticated" to="/viewtwo" v-on:click.native="logout()" replace>Logout</router-link>
+      <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
       <router-view @authenticated="setAuthenticated" />
       <!--<router-view></router-view>-->
     </main>
@@ -73,23 +71,4 @@ export default {
       box-sizing: border-box;
       padding-top: 16px;
     }
-
-  .span-img {
-    height: 30px;
-    width: 50px;
-  }
-
-  .container {
-    position: center;
-    text-align: center;
-    color: white;
-  }
-
-  .centered {
-    padding-top: 200px;
-    position: absolute;
-    top: 40%;
-    left: 49%;
-    transform: translate(-50%, -50%);
-  }
 </style>

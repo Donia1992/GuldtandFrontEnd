@@ -23,14 +23,14 @@
 
 <script>
   export default {
-    name: 'login',
+    name: 'Login',
     data() {
       return {
         msg: 'The username and / or password is incorrect',
         input: {
           username: '',
           password: ''
-        }
+        }        
       }
     },
     methods: {
@@ -38,17 +38,19 @@
         if (this.input.username != '' && this.input.password != '') {
           if (this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
             this.$emit("authenticated", true);
-            this.$router.replace({ name: "Main" });
+            this.$router.replace({ name: "MainMenu" }); //Change to MainMenu
           } else {
             var x = document.getElementById("errorMessage");
             x.style.visibility = "visible";
-            this.input.password = ''
+            this.input.username = '',
+              this.input.password = ''
           }
         } else {
           var x = document.getElementById("errorMessage");
           x.style.visibility = "visible";
           console.log("A username and password must be present");
-          this.input.password = ''
+          this.input.username = '',
+            this.input.password = ''
         }
       },
       decrypt: function () {
@@ -72,11 +74,18 @@
     height: 750px;
     width: 750px;
   }
-  .header {
-    margin: 0;
-    height: 0px;
-    padding: 0 0px 0 0px;
-    background-color: white;
+
+  .container {
+    position: center;
+    text-align: center;
     color: white;
+  }
+
+  .centered {
+    padding-top: 200px;
+    position: absolute;
+    top: 40%;
+    left: 49%;
+    transform: translate(-50%, -50%);
   }
 </style>

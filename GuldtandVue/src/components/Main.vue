@@ -1,16 +1,16 @@
 <template>
   <center>
-    <div class="mainview">
+    <main>
       <div class="container">
         <img src="../assets/images/toothmap.png" class="main-img" alt="tooth" style="padding-top: 20px">
       </div>
-    </div>
+    </main>
   </center>
 </template>
 
 <script>
   export default {
-    name: 'mainview',
+    name: 'Main',
   }
 </script>
 
