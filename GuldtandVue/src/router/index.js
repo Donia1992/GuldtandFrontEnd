@@ -6,6 +6,7 @@ import Home from '@/components/Home'
 import Patient from '@/components/Patient'
 import Welcome from '@/components/Welcome'
 import Xray from '@/components/Xray'
+import Admin from '@/components/Admin'
 
 
 Vue.use(Router)
@@ -47,6 +48,11 @@ export default new Router({
       path: '/xray',
       name: 'Xray',
       component: Xray
+    },
+    {
+      path: '/Admin',
+      name: 'Admin',
+      component: Admin
     }
   ]
 })
