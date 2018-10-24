@@ -16,7 +16,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   img {
     border-radius: 1%;
     height: 90%;
