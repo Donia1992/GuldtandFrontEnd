@@ -1,5 +1,5 @@
 <template>
-  <div id="app">   
+  <div id="app">
     <main>
       <preLogin id="preLogin" style="visibility: hidden">
         <header>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-export default {
+  export default {
     name: 'app',
     data() {
       return {
@@ -42,7 +42,12 @@ export default {
     },
     mounted() {
       if (!this.authenticated) {
-        this.$router.replace({ name: "Login" });
+        //Start.  So login is no longer needed
+        document.getElementById("preLogin").style.visibility = "visible";
+        this.$router.replace({ name: "EditUser" });
+        //End
+
+        //this.$router.replace({ name: "Login" });
       }
     },
     methods: {
@@ -116,7 +121,7 @@ export default {
         }
       }
     }
-}
+  }
 </script>
 
 <style>
@@ -213,5 +218,4 @@ export default {
     float: right;
     color: black;
   }
-
 </style>
