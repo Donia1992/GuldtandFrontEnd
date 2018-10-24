@@ -39,7 +39,7 @@
         var x = document.getElementById("preLogin");
         x.style.visibility = "visible";
         this.$emit("authenticated", true);
-        this.$router.replace({ name: "MainMenu" });
+        this.$router.replace({ name: "Home" });
         //End
 
         if (this.input.username != '' && this.input.password != '') {
@@ -48,7 +48,7 @@
             var x = document.getElementById("preLogin");
             x.style.visibility = "visible";
 
-            this.$router.replace({ name: "MainMenu" }); //Change to MainMenu
+            this.$router.replace({ name: "Home" });
 
           } else {
             var x = document.getElementById("errorMessage");

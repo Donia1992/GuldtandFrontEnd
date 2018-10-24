@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
-import MainMenu from '@/components/MainMenu'
 import Home from '@/components/Home'
 import Patient from '@/components/Patient'
 import Welcome from '@/components/Welcome'
@@ -15,18 +14,13 @@ export default new Router({
     {
       path: '/',
       redirect: {
-        name: 'Login' // Change to the page you're working on atm (Change back to Login)
+        name: 'Patient' // Change to the page you're working on atm (Change back to Login)
       }
     },
     {
       path: '/login',
       name: 'Login',
       component: Login
-    },
-    {
-      path: '/mainmenu',
-      name: 'MainMenu',
-      component: MainMenu // Change to the page you're working on atm (Change back to MainMenu)
     },
     {
       path: '/home',

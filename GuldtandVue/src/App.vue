@@ -44,7 +44,7 @@
       if (!this.authenticated) {
         //Start.  So login is no longer needed
         document.getElementById("preLogin").style.visibility = "visible";
-        this.$router.replace({ name: "EditUser" });
+        this.$router.replace({ name: "Patient" }); // Change to the page you're working on atm (Change back to Login)
         //End
 
         //this.$router.replace({ name: "Login" });
