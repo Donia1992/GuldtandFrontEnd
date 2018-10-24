@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/',
       redirect: {
-        name: 'Login'
+        name: 'Login' // Change to the page you're working on atm (Change back to Login)
       }
     },
     {
@@ -26,7 +26,7 @@ export default new Router({
     {
       path: '/mainmenu',
       name: 'MainMenu',
-      component: MainMenu
+      component: MainMenu // Change to the page you're working on atm (Change back to MainMenu)
     },
     {
       path: '/home',
