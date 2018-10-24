@@ -1,28 +1,28 @@
 <template>
   <div id="app">   
     <main>
-      <preLogin id="preLogin" style="visibility: hidden">
+      <section id="preLogin" style="visibility: hidden">
         <header>
-          <titletext>
+          <section class="titletext">
             GULDTAND
-          </titletext>
-          <logout>
+          </section>
+          <section class="logout">
             <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout &nbsp;</router-link>
-          </logout>
+          </section>
         </header>
-        <mainButtons>
+        <section class="mainbuttons">
           <button class="button" id="homeButton" v-on:click="switchPanel(1)">Home</button>
           <button class="button" id="patientButton" v-on:click="switchPanel(2)">Patient</button>
           <button class="button" id="xrayButton" v-on:click="switchPanel(3)">X-Ray</button>
           <button class="button" id="welcomeButton" v-on:click="switchPanel(4)">Welcome</button>
-        </mainButtons>
+        </section>
         <br />
-      </preLogin>
+      </section>
       <router-view @authenticated="setAuthenticated"></router-view>
       <footer>
-        <footerleft>&nbsp;&nbsp;&nbsp; Copyright GangsterGrillz-ENFORCEMENT</footerleft>
-        <footercenter>GULDTAND DENTAL</footercenter>
-        <footerright>Created by MyRepo  &nbsp;&nbsp;&nbsp;  </footerright>
+        <span class="footerleft">&nbsp;&nbsp;&nbsp;Copyright GangsterGrillz-ENFORCEMENT</span>
+        <span class="footercenter">GULDTAND DENTAL</span>
+        <span class="footerright">Created by MyRepo&nbsp;&nbsp;&nbsp;</span>
       </footer>
     </main>
   </div>
@@ -127,7 +127,7 @@ export default {
     color: #2c3e50;
   }
 
-  titletext {
+  .titletext {
     font-size: 44px;
     background: url(https://images.pexels.com/photos/988874/pexels-photo-988874.jpeg?auto=compress&cs=tinysrgb&h=350) -80px -80px;
     -webkit-text-fill-color: transparent;
@@ -135,22 +135,20 @@ export default {
     font-weight: bold;
     font-family: 'Copperplate';
     width: 600px;
-    margin: 50px auto;
+    margin: 0px auto;
     text-align: center;
     text-decoration: double;
   }
 
-  logout {
+  .logout {
     float: right;
     font-size: 24px;
-    margin: 21px auto;
-    color: black;
+    margin: -30px auto;
   }
 
   body {
-    margin: 0;
     background-image: url(./assets/mainbg.jpg);
-    background-size: 100%;
+    background-repeat: no-repeat;
   }
 
   main {
@@ -193,23 +191,21 @@ export default {
     width: 100%;
     background-color: #568aa3;
     opacity: 0.8;
-    text-align: center;
     height: 30px;
     box-shadow: 12px 12px 16px 16px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     line-height: 30px;
   }
 
-  footerleft {
+  .footerleft {
     float: left;
     color: black;
   }
 
-  footercenter {
-    text-align: center;
+  .footercenter {
     color: black;
   }
 
-  footerright {
+  .footerright {
     float: right;
     color: black;
   }

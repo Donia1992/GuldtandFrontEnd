@@ -8,7 +8,6 @@ import Welcome from '@/components/Welcome'
 import Xray from '@/components/Xray'
 
 
-
 Vue.use(Router)
 
 export default new Router({
