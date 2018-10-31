@@ -12,7 +12,7 @@
       <br />
       <div class="nameList">
         <ul class="listLook" id="nameSelectItems">
-          <li class="nameListItems" v-for="employee in patients" v-on:click="setSelectedName(employee.name)"> {{ employee.name }}</li>
+          <li class="nameListItems" v-for="employee in patients" v-on:click="setSelectedName(employee.firstName)"> {{ employee.firstName }}</li>
         </ul>
       </div>
       <div class="imageList">
@@ -56,16 +56,20 @@
         }
         //alert(this.samanthaUrls[0].imageName);
         this.selectedName = inName;
-        if (inName == "Russell Collins") {
+        if (inName == "Russell") {
           this.xrayImages = this.russelUrls;
         }
 
-        else if (inName == "Samantha Jensen") {
+        else if (inName == "Samantha") {
           this.xrayImages = this.samanthaUrls;
         }
         
-        else if (inName == "Ashley Scott") {
+        else if (inName == "Ashley") {
           this.xrayImages = this.ashleyUrls;
+        }
+
+        else if (inName == "Hayley") {
+          this.xrayImages = this.hayleyUrls;
         }
       },
 
@@ -176,6 +180,10 @@
           { imageName: 'down-up', Url: 'https://www.sweettoothkids.com/PediatricDentalBlog/wp-content/uploads/2017/10/MAX-300x216.jpg' },
         ],
         ashleyUrls: [
+          { imageName: 'dog', Url: 'https://www.vetmidland.com/wp-content/uploads/2016/02/Dog-Skull-Lateral-HD-270x300.png' },
+          { imageName: 'dogZoomed', Url: 'https://www.petdox.com/wp-content/uploads/2017/10/ll1-460x295.jpg' },
+        ],
+         hayleyUrls: [
           { imageName: 'dog', Url: 'https://www.vetmidland.com/wp-content/uploads/2016/02/Dog-Skull-Lateral-HD-270x300.png' },
           { imageName: 'dogZoomed', Url: 'https://www.petdox.com/wp-content/uploads/2017/10/ll1-460x295.jpg' },
         ]

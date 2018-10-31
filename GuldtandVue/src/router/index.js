@@ -8,6 +8,7 @@ import Xray from '@/components/Xray'
 import CreateUser from '@/components/CreateUser'
 import User from '@/components/User'
 import DetailsUser from '@/components/DetailsUser'
+import EditUser from '@/components/EditUser'
 
 
 Vue.use(Router)
@@ -59,6 +60,11 @@ export default new Router({
       path: '/detailsuser/:id',
       name: 'DetailsUser',
       component: DetailsUser
+    },
+    {
+      path: '/edituser/:id',
+      name: 'EditUser',
+      component: EditUser
     }
   ],
   mode: 'history' //No hash localhost:8080/#/createuser --> localhost:8080/createuser   

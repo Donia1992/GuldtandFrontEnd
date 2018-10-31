@@ -5,7 +5,8 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Role</th>
+            <th>Lastname</th>
             <th>Phone</th>
             <th>Email</th>
             <th>
@@ -15,13 +16,12 @@
         </thead>
         <tbody>
           <tr v-for="user in users">
-            <td> {{user.firstName}}&nbsp;{{user.lastName}}</td>
-            <td>{{user.phoneNumber}}</td>
-            <td>{{user.email}}</td>
+            <td v-text="user.roleId"></td> <!--Change to role name-->
+            <td v-text="user.lastName"></td>
+            <td v-text="user.phoneNumber"></td>
+            <td v-text="user.email"></td>
             <td>
-              <router-link :to="`/edituser/${user.id}`">Edit</router-link> |
-              <router-link :to="`/detailsuser/${user.id}`">Details</router-link> |
-              <router-link :to="`/deleteuser/${user.id}`">Delete</router-link>
+                <router-link class="button" :to="`/detailsuser/${user.id}`">More details...</router-link>              
             </td>
           </tr>
         </tbody>
@@ -60,10 +60,9 @@
   }
 
   .create-button {
-    border-radius: 4px;
     background-color: transparent;
     border: none;
-    color: #FFFFFF;
+    color: #000000;
     text-align: center;
     font-size: 20px;
     width: 200px;
@@ -95,4 +94,13 @@
         opacity: 1;
         right: 0;
       }
+
+  .button {
+    background: none !important;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    cursor: pointer;
+  }
 </style>

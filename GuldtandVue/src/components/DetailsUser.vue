@@ -6,25 +6,32 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Role Id</th>
-            <th>Name</th>
+            <th>Role</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
             <th>Phone</th>
             <th>Email</th>
             <th>Password</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td v-text="user.id"></td>
-            <td v-text="user.roleId"></td>
-            <td> {{user.firstName}}&nbsp;{{user.lastName}}</td>
+            <td v-text="user.roleId"></td> <!--Change to role name-->
+            <td v-text="user.firstName"></td>
+            <td v-text="user.lastName"></td>
             <td v-text="user.phoneNumber"></td>
             <td  v-text="user.email"></td>
             <td  v-text="user.password"></td>
+            <td>
+              <button><router-link :to="`/edituser/${user.id}`">Edit</router-link></button>
+              <button v-on:click="deleteUser(user.id)">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>
-      <button class="create-button" style="float:right"><span><router-link to="/user">Back to list</router-link></span></button>
+      <button class="create-button" style="float:right; padding-top:10px"><span><router-link to="/user">Back to list</router-link></span></button>
     </div>
   </div>
 </template>
@@ -47,6 +54,19 @@
         .catch((error) => {
           console.log(error);
         });
+    },
+    methods: {
+      deleteUser(userid) {
+        axios.delete('https://localhost:44398/api/employee/' + userid)
+          .then((response) => {
+            console.log("Response: ", response);
+            alert("User successfully deleted!")
+            this.$router.replace({ name: "User" });
+          })
+          .catch((error) => {
+            console.log("Something went wrong...:", error);
+          });
+      }
     }
   }
 </script>
