@@ -6,10 +6,10 @@
         <div class="centered">
           <div class="form-group">
             <label id="errorMessage" style="color: #6d6c6c; color: #ff0000; visibility:hidden">{{msg}}</label>
-            <input type="text" class="form-control" style="text-align:center" placeholder="Username" v-model="input.username" v-on:click="removeErrorMessage" name="username" />
+            <input type="text" class="form-control" style="text-align:center" placeholder="Username" v-model="input.username" v-on:click="removeErrorMessage" name="username" required/>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" style="text-align:center" placeholder="Password" v-model="input.password" v-on:click="removeErrorMessage" name="password" id="password" />
+            <input type="password" class="form-control" style="text-align:center" placeholder="Password" v-model="input.password" v-on:click="removeErrorMessage" name="password" id="password" required/>
             <div style="color: #6d6c6c; font-size: 15px; padding-top:10px"> <input type="checkbox" v-on:click="decrypt" /> Show Password</div>
           </div>
           <div class="form-group">
@@ -98,11 +98,5 @@
     top: 40%;
     left: 49%;
     transform: translate(-50%, -50%);
-  }
-
-  body.mybody {
-    margin: 0;
-    background-color: white;
-    background-size: 100%;
   }
 </style>

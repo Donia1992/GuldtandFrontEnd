@@ -5,6 +5,9 @@ import Home from '@/components/Home'
 import Patient from '@/components/Patient'
 import Welcome from '@/components/Welcome'
 import Xray from '@/components/Xray'
+import CreateUser from '@/components/CreateUser'
+import User from '@/components/User'
+import DetailsUser from '@/components/DetailsUser'
 
 
 Vue.use(Router)
@@ -14,7 +17,7 @@ export default new Router({
     {
       path: '/',
       redirect: {
-        name: 'Patient' // Change to the page you're working on atm (Change back to Login)
+        name: 'Home'
       }
     },
     {
@@ -41,6 +44,22 @@ export default new Router({
       path: '/xray',
       name: 'Xray',
       component: Xray
+    },
+    {
+      path: '/createuser',
+      name: 'CreateUser',
+      component: CreateUser
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: User
+    },
+    {
+      path: '/detailsuser/:id',
+      name: 'DetailsUser',
+      component: DetailsUser
     }
-  ]
-})
+  ],
+  mode: 'history' //No hash localhost:8080/#/createuser --> localhost:8080/createuser   
+}) 
