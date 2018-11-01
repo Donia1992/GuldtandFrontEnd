@@ -12,7 +12,9 @@
             <th>Phone</th>
             <th>Email</th>
             <th>Password</th>
-            <th></th>
+            <th>
+              <button class="create-button" style="float:right; padding-top:10px"><span><router-link to="/user">Back to list</router-link></span></button>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -25,13 +27,14 @@
             <td  v-text="user.email"></td>
             <td  v-text="user.password"></td>
             <td>
-              <button><router-link :to="`/edituser/${user.id}`">Edit</router-link></button>
-              <button v-on:click="deleteUser(user.id)">Delete</button>
+              <router-link class="button" :to="`/edituser/${user.id}`">Edit</router-link> /
+              <div v-on:click="deleteUser(user.id)">
+                <router-link class="button" :to="`/deleteuser/${user.id}`">Delete</router-link>
+              </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <button class="create-button" style="float:right; padding-top:10px"><span><router-link to="/user">Back to list</router-link></span></button>
     </div>
   </div>
 </template>
@@ -112,5 +115,14 @@
   .titletext {
     width: 300px !important;
     font-size: 40px !important;
+  }
+
+  .button {
+    background: none !important;
+    color: inherit;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+    cursor: pointer;
   }
 </style>
