@@ -1,7 +1,7 @@
 <template>
   <div class="centered">
     <div class="container">
-      <div class="titletext">Employees</div>
+      <div class="titletext">Employees List</div>
       <table class="table table-hover">
         <thead>
           <tr>
